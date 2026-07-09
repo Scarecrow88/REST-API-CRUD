@@ -1,50 +1,32 @@
 [
     {
-        "id": 1,
-        "title": "Comprar víveres",
-        "description": "Comprar arroz, leche y pan",
-        "completed": false
+        "id":1,
+        "name":"Nude Nuns with Big Guns",
+        "genre":"Action|Comedy",
+        "year":2005
     },
     {
         "id": 2,
-        "title": "Estudiar JavaScript",
-        "description": "Practicar funciones y objetos",
-        "completed": true
+        "name":"War of the Buttons",
+        "genre":"Adventure|Children|Drama",
+        "year":2004
     },
     {
-        "id": 3,
-        "title": "Llamar a mamá",
-        "description": "Llamada semanal los domingos",
-        "completed": false
+        "id":3,
+        "name":"Education of Little Tree, The",
+        "genre":"Drama",
+        "year":2009
     },
     {
-        "id": 4,
-        "title": "Hacer ejercicio",
-        "description": "Cardio por 30 minutos",
-        "completed": true
+        "id":4,
+        "name":"Tale of Two Sisters, A (Janghwa, Hongryeon)",
+        "genre":"Drama|Horror|Mystery|Thriller",
+        "year":2003
     },
     {
-        "id": 5,
-        "title": "Revisar correos",
-        "description": "Responder correos importantes",
-        "completed": false
-    },
-    {
-        "id": 6,
-        "title": "Escribir blog post",
-        "description": "Tema: Introducción a Node.js",
-        "completed": false
-    },
-    {
-        "id": 7,
-        "title": "Actualizar CV",
-        "description": "Agregar proyectos recientes",
-        "completed": true
-    },
-    {
-        "id": 8,
-        "title": "Organizar escritorio",
-        "description": "Limpiar archivos no usados",
-        "completed": false
+        "id":5,
+        "name":"Won't Anybody Listen?",
+        "genre":"Documentary",
+        "year":1987
     }
 ]
