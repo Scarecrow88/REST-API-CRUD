@@ -1,0 +1,23 @@
+{
+  "name": "rest-api-crud",
+  "version": "1.0.0",
+  "description": "REST API CRUD sin emplear ningun framework y sin persistencia de datos",
+  "keywords": [
+    "node",
+    "server",
+    "service",
+    "rest",
+    "crud"
+  ],
+  "license": "MIT",
+  "author": "Scarecrow88",
+  "type": "commonjs",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./src/app.js"
+  }
+}
