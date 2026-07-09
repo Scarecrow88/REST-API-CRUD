@@ -1,24 +1,25 @@
 {
   "name": "rest-api-crud",
-  "version": "2.0.0",
-  "description": "REST API CRUD con el framework Express y sin persistencia de datos",
+  "version": "3.0.0",
+  "description": "REST API CRUD con el framework Express y base de datos MySQL",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./src/app.js"
   },
   "keywords": [
+    "node",
+    "server",
     "rest",
     "api",
-    "express",
-    "server",
-    "node"
+    "mysql"
   ],
-  "author": "Scarecrow88",
+  "author": "JohnDoe",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.13.6",
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "mysql": "^2.18.1"
   }
 }

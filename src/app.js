@@ -3,8 +3,7 @@ const express = require ('express');
 const morgan = require ('morgan');
 const cors = require ('cors');
 let pathRoutes = require ('./routes/index.js');
-let movieRoutes = require ('./routes/movies.js');
-let albumRoutes = require ('./routes/album.js');
+let userRoutes = require ('./routes/userRoutes.js');
 let port = (process.env.PORT || 3000);
 let app = express ();
 app
@@ -19,8 +18,8 @@ app
     .use (morgan ('dev'))
     // Rutas
     .use (pathRoutes)
-    .use ('/api/movies/', movieRoutes)
-    .use ('/api/users/', albumRoutes)
+    .use ('/api/users/', userRoutes)
+    
     .listen (port, () => {
         console.clear ();
         console.log ('Server on port ' + port);
