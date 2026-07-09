@@ -1,11 +1,11 @@
-# Instala la librería Express para crear el servidor
-npm install express
+# Limpiar el proyecto (elimina target/ y caché)
+mvn clean
 
-# Instala la librería CORS para manejar las solicitudes de origen cruzado
-npm install cors
+# Descargar e instalar dependencias
+mvn install
 
-# Instala la librería Morgan para registrar las solicitudes HTTP
-npm install morgan
+# Compilar el proyecto
+mvn compile
 
-# Instala la librería de mongoose para conectar con MongoDB
-npm install mongoose
+# Ejecutar la aplicación
+mvn spring-boot:run

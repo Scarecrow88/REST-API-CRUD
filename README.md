@@ -1,80 +1,71 @@
 # REST API CRUD
 ## Funcionalidades
-- Crear nuevo registro de cliente
-- Listar registros de clientes
-- Obtener registro de clientes por id
-- Editar registro de cliente
-- Eliminar registros de cliente
-- Manejo de Objeto HTTP
-- Manejo de Errores HTTP
+- Crear nuevo registro de persona
+- Listar registros de personas
+- Editar registro de persona
+- Eliminar registros de persona
+- Listar registros desde servicio externo
 ## Tecnologías utilizadas
-- **Backend:** JavaScript, Node.js, Express
-- **Base de datos:** Mongoose, MongoDB
-- **Logs del servidor:** morgan
-- **Control de acceso entre dominios:** cors
+- **Backend:** Java, Spring, Spring Boot
+- **Base de datos:** JPA, MySQL (mysql-connector-j)
+- **Web:** Spring Web
 ## Arquitecturas
-- Monolitica
-- Modular
+- Modelo vista controlador
 - Modelo vista controlador (MVC)
 ## URL Docs
-- **url:** `localhost:3000`
+- **url:** `localhost:8080`
 ### Endpoints `/`
 #### ➤ GET `/`
 Obtiene un mensaje de comprobacion de funcionamiento.
 - **Response:** `200 OK`
 ```json
 {
-    "title": "Hola mundo"
+  "title": "Hola mundo"
 }
 ```
-### Endpoints `/api/clients`
-#### ➤ GET `/users`
-Obtiene la lista de todos los registros de los clientes.
+### Endpoints `/api/people`
+#### ➤ GET `/people`
+Obtiene la lista de todos los registros de las personas.
 - **Response:** `200 OK`
 ```json
-{
+[
     "success": true,
     "msg": "Get all data",
     "data": [
         {
-            "_id": "6a1c67a14433083ddafdabf3",
-            "name": "Luis",
-            "lastName": "Fernández",
-            "age": 22,
-            "amount": 31000,
-            "__v": 0
+            "id": 1,
+            "name": "Juan Pérez",
+            "city": "Bogotá",
+            "celNumber": "3001234567"
         },
         ...
     ]
-}
+]
 ```
-#### ➤ GET `/users/:id`
-Obtiene un solo registro de cliente por ID.
-- **Params:** `:id` → ID del cliente a buscar
+#### ➤ GET `/people/:id`
+Obtiene un solo registro de persona por ID.
+- **Params:** `:id` → ID de la persona a buscar
 - **Response:** `200 OK`
 ```json
 {
     "success": true,
     "msg": "Get one data",
     "data": {
-        "_id": "6a1c67b14433083ddafdabf4",
-        "name": "Sofía",
-        "lastName": "López",
-        "age": 30,
-        "amount": 67000,
-        "__v": 0
+        "id": 44,
+        "name": "Abril Niño",
+        "city": "Cartago",
+        "celNumber": "3548788990"
     }
 }
 ```
-#### ➤ POST `/clients/add`
-Crea un nuevo registro de cliente.
-- **Body:** `application/json`
+#### ➤ POST `/people`
+Crea un nuevo registro de persona.
+- **Body**: `application/json`
 ```json
 {
-    "name": "Andrés",
-    "lastName": "Torres",
-    "age": 38,
-    "amount": 61000
+    "name": "Mario Torres",
+    "city": "Bogota",
+    "celNumber": "3023453322"
 }
 ```
 - **Response:** `201 OK`
@@ -82,39 +73,71 @@ Crea un nuevo registro de cliente.
 {
     "success": true,
     "msg": "Save data",
-    "data": "6a1e0f3820b0f533fcea4376"
+    "data": "14"
 }
 ```
-#### ➤ PUT `/clients/:id`
-Actualiza un registro de cliente existente por ID.
+#### ➤ PUT `/people/:id`
+Actualiza un registro de persona existente por ID.
 - **Params:** `:id` → ID del registro a actualizar
 - **Body:** `application/json`
-```json
-{    
-    "name": "Juan",    
-    "lastName": "Perez",    
-    "age": 44,    
-    "amount": 60000
-}
 
+```json
+{
+    "celNumber": "3426566778",
+    "city": "Rionegro",
+    "id": 32,
+    "name": "Julieta Hoyos"
+}
 ```
 - **Response:** `201 OK`
 ```json
 {
     "success": true,
     "msg": "Updated data",
-    "data": "6a1e134d20b0f533fcea4377"
+    "data": "25"
 }
 ```
-#### ➤ DELETE `/clients/:id`
-Elimina un registro de cliente por ID.
-- **Params:** `:id` → ID del registro a eliminar
+#### ➤ DELETE `/people/:id`
+Elimina un registro de persona por ID.
+- **Params**: `:id` → ID del registro a eliminar
 - **Response:** `200 OK`
 ```json
 {
     "success": true,
     "msg": "Data deleted",
-    "data": "6a1e157a3773fd895927b526"
+    "data": 31
 }
+```
+### Endpoints `/api/user`
+#### ➤ GET `/user`
+Obtiene la lista de todos los registros de los usuarios de un servicio externo (JSONPlaceholder).
+- **Response:** `200 OK`
+```json
+[
+    {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    },
+    ...
+]
 ```
 # **Nota:** Antes de salir, pasate a ver las branches
