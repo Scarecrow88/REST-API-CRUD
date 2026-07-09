@@ -7,5 +7,5 @@ npm install cors
 # Instala la librería Morgan para registrar las solicitudes HTTP
 npm install morgan
 
-# Instala la librería MySQL para conectar con la base de datos
-npm install mysql
+# Instala la librería de mongoose para conectar con MongoDB
+npm install mongoose

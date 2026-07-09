@@ -1,14 +1,15 @@
 # REST API CRUD
 ## Funcionalidades
-- Crear nuevo registro de usuario
-- Listar registros de usuarios
-- Obtener registro de usuario por id
-- Editar registro de usuario
-- Eliminar registros de usuario
+- Crear nuevo registro de cliente
+- Listar registros de clientes
+- Obtener registro de clientes por id
+- Editar registro de cliente
+- Eliminar registros de cliente
 - Manejo de Objeto HTTP
+- Manejo de Errores HTTP
 ## Tecnologías utilizadas
 - **Backend:** JavaScript, Node.js, Express
-- **Base de datos:** MySQL
+- **Base de datos:** Mongoose, MongoDB
 - **Logs del servidor:** morgan
 - **Control de acceso entre dominios:** cors
 ## Arquitecturas
@@ -26,9 +27,9 @@ Obtiene un mensaje de comprobacion de funcionamiento.
     "title": "Hola mundo"
 }
 ```
-### Endpoints `/api/users`
+### Endpoints `/api/clients`
 #### ➤ GET `/users`
-Obtiene la lista de todos los registros de los usuarios.
+Obtiene la lista de todos los registros de los clientes.
 - **Response:** `200 OK`
 ```json
 {
@@ -36,77 +37,84 @@ Obtiene la lista de todos los registros de los usuarios.
     "msg": "Get all data",
     "data": [
         {
-            "id": 1,
-            "name": "Gloria",
-            "age": 25,
-            "country": "Argentina"
+            "_id": "6a1c67a14433083ddafdabf3",
+            "name": "Luis",
+            "lastName": "Fernández",
+            "age": 22,
+            "amount": 31000,
+            "__v": 0
         },
         ...
     ]
 }
 ```
 #### ➤ GET `/users/:id`
-Obtiene un solo registro de usuario por ID.
-- **Params:** `:id` → ID del usuario a buscar
+Obtiene un solo registro de cliente por ID.
+- **Params:** `:id` → ID del cliente a buscar
 - **Response:** `200 OK`
 ```json
 {
     "success": true,
     "msg": "Get one data",
     "data": {
-        "id": 1,
-        "name": "Gloria",
-        "age": 25,
-        "country": "Argentina"
+        "_id": "6a1c67b14433083ddafdabf4",
+        "name": "Sofía",
+        "lastName": "López",
+        "age": 30,
+        "amount": 67000,
+        "__v": 0
     }
 }
 ```
-#### ➤ POST `/users`
-Crea un nuevo registro de usuario.
+#### ➤ POST `/clients/add`
+Crea un nuevo registro de cliente.
 - **Body:** `application/json`
 ```json
 {
-    "name": "Diego",
-    "age": 34,
-    "country": "Costa Rica"
+    "name": "Andrés",
+    "lastName": "Torres",
+    "age": 38,
+    "amount": 61000
 }
 ```
-- **Response:** `200 OK`
+- **Response:** `201 OK`
 ```json
 {
     "success": true,
     "msg": "Save data",
-    "data": "10"
+    "data": "6a1e0f3820b0f533fcea4376"
 }
-
 ```
-#### ➤ PUT `/users/:id`
-Actualiza un registro de usuario existente por ID.
+#### ➤ PUT `/clients/:id`
+Actualiza un registro de cliente existente por ID.
 - **Params:** `:id` → ID del registro a actualizar
 - **Body:** `application/json`
 ```json
-{
-    "name": "Jane",
-    "age": 37,
-    "country": "Peru"
+{    
+    "name": "Juan",    
+    "lastName": "Perez",    
+    "age": 44,    
+    "amount": 60000
 }
+
 ```
-- **Response:** `200 OK`
+- **Response:** `201 OK`
 ```json
 {
     "success": true,
     "msg": "Updated data",
-    "data": "12"
+    "data": "6a1e134d20b0f533fcea4377"
 }
 ```
-#### ➤ DELETE `/users/:id`
-Elimina un registro de usuario por ID.
+#### ➤ DELETE `/clients/:id`
+Elimina un registro de cliente por ID.
 - **Params:** `:id` → ID del registro a eliminar
 - **Response:** `200 OK`
 ```json
 {
     "success": true,
-    "data": "21"
+    "msg": "Data deleted",
+    "data": "6a1e157a3773fd895927b526"
 }
 ```
 # **Nota:** Antes de salir, pasate a ver las branches

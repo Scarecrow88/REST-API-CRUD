@@ -1,25 +1,19 @@
 {
   "name": "rest-api-crud",
-  "version": "3.0.0",
-  "description": "REST API CRUD con el framework Express y base de datos MySQL",
+  "version": "4.0.0",
+  "description": "REST API CRUD con el framework Express y base de datos Mongodb",
+  "license": "MIT",
+  "author": "Scarecrow88",
+  "type": "commonjs",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node ./src/app.js"
   },
-  "keywords": [
-    "node",
-    "server",
-    "rest",
-    "api",
-    "mysql"
-  ],
-  "author": "JohnDoe",
-  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
-    "morgan": "^1.10.1",
-    "mysql": "^2.18.1"
+    "mongoose": "^9.6.3",
+    "morgan": "^1.10.1"
   }
 }
